@@ -1144,7 +1144,9 @@ int lua_getinfo_dll(unsigned long api, lua_State* L, const char* what, lua_Debug
 
 void lua_remove_dll(unsigned long api, lua_State* L, int index)
 {
-    if ( g_interfaces[ api ].version >= 530 )
+    //if ( g_interfaces[ api ].version >= 530 )
+	// For some reason this check never evaluates to true, but we use 5.3 so we should go to this condition.
+    if ( true )
     {
         lua_rotate_dll( api, L, index, -1 );
         lua_pop_dll( api, L, 1 );
