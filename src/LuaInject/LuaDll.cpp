@@ -747,6 +747,7 @@ const char* GetWhat(unsigned long api, const lua_Debug* ar)
 {
     switch( g_interfaces[api].version)
     {
+		case 530:
         case 520: ar->ld52.what;
         default: return ar->ld51.what;
     }
@@ -1370,7 +1371,7 @@ int lua_getstack_dll(unsigned long api, lua_State* L, int level, lua_Debug* ar)
 
 void lua_insert_dll(unsigned long api, lua_State* L, int index)
 {
-    if (g_interfaces[ api ].version >= 53)
+    if (g_interfaces[ api ].version >= 530)
     {
         lua_rotate_dll(api, L, index, 1 );
     }
