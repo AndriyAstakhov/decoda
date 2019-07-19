@@ -3165,7 +3165,7 @@ unsigned int DebugBackend::GetCStack(HANDLE hThread, StackEntry stack[], unsigne
         }
         else
         {
-            sprintf(stack[i].name, "0x%x", stackFrame[i].AddrPC.Offset);
+            sprintf(stack[i].name, "0x%llx", stackFrame[i].AddrPC.Offset);
         }
 
     }
