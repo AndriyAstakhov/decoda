@@ -1,0 +1,10 @@
+Version:		2.6.2
+Download date:	2019.07.18
+
+URL:			www.sourceforge.net/projects/tinyxml
+
+Modifications:
+VisualStudio 2019
+Toolset:			v142
+Windows SDK: 		10.0.17763.0
+Runtime Library:	/MD & /MDd
