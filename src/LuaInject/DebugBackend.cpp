@@ -3165,7 +3165,11 @@ unsigned int DebugBackend::GetCStack(HANDLE hThread, StackEntry stack[], unsigne
         }
         else
         {
-            sprintf(stack[i].name, "0x%llx", stackFrame[i].AddrPC.Offset);
+#pragma warning(push)
+#pragma warning(disable: 4477)  // 'sprintf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'DWORD64'
+								// This is false warning. Leave it as is, otherwise debug watch variable values will be broken
+            sprintf(stack[i].name, "0x%x", stackFrame[i].AddrPC.Offset);
+#pragma warning(pop)
         }
 
     }
